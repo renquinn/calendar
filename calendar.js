@@ -140,6 +140,16 @@ $(function() {
     $dialog.dialog('open');
   });
 
+    /* For dynamic sizing when resizing the window
+  $(window).resize(function(event) {
+    var width = event.target.innerWidth;
+    console.log(width);
+    $('.day').css('width', (width)*(.1));
+    $('.day').css('height', (width)*(.1));
+    $('.day').css('border-radius', (width)*(.01));
+  });
+    */
+
   init();
 
 });
