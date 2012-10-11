@@ -69,12 +69,14 @@ h1 {
 }
 
 #previous {
+  margin-bottom: 25px;
   display: inline;
   float: left;
   cursor: pointer;
 }
 
 #next {
+  margin-bottom: 25px;
   display: inline;
   float: right;
   cursor: pointer;
