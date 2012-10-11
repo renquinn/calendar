@@ -42,6 +42,10 @@ $(function() {
     putMonth(date);
   });
 
+  $('#go-today').click(function() {
+    init();
+  });
+
   var daysInMonth = function(month, year) {
     return new Date(year, month+1, 0).getDate();
   };
