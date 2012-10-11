@@ -109,6 +109,14 @@ h1 {
   background: rgba(50, 50, 50, 0.8);
 }
 
+#dialog-events {
+  min-height: 100px;
+}
+
+#add-event {
+  float: right;
+}
+
 @media (max-width: 1400px) {
   .day {
     border-radius: 14px;

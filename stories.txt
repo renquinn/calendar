@@ -1,11 +1,10 @@
 MONTHS
 DAYS
   DIALOG
-    5 (style) I want to create a new event (via a button)
     11 (style) I want to sort events based on priority (jQueryui sortable)
 EVENTS
-  6 (logic) I want to create a new event (See DIALOG)
-	- I want to see events by day
+  6 I want to create a new event (See DIALOG)
+	6.5 I want to see events by day
   7 When I hover over an event, I want a tooltip to tell me what event it is
   TOOLTIP
     8 I want to edit the current event (via a button)
@@ -20,4 +19,4 @@ DONE
   3 I want to switch from one month to another
     - The month and days and day numbers should change accordingly
   4 When I click on a day, I want a dialog popup to appear with the details of each event (jQueryui dialog/modal)
-  4.5 I want to see the current month when I click the Today button
+  5 I want to see the current month when I click the Today button
