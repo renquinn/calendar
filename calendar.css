@@ -1,0 +1,81 @@
+body {
+  background: #333;
+  margin: 0;
+}
+
+h1 {
+  font: 70px bold Tahoma, Helvetica, Arial, Sans-Serif;
+  text-align: center;
+  color: #adbdbd;
+  text-shadow: 0px 2px 3px #efffff;
+}
+
+#month {
+  border-radius: 75px;
+  background: #dfefef;
+  margin: 50px;
+  padding: 30px 50px 50px;
+  box-shadow: 10px 10px 10px 0px #000;
+}
+
+#month table {
+  margin: 50px auto;
+}
+
+#month td {
+}
+
+.day {
+  border-radius: 25px;
+  background: #0f0;
+  height: 150px;
+  width: 150px;
+  padding: 10px;
+  border: solid 1px #dfefef;
+}
+
+.day:hover {
+  border: solid 1px #000;
+}
+
+#today {
+  background: #ff0;
+}
+
+.notmyday {
+  background: rgba(0, 255, 0, 0.3);
+}
+
+.number {
+  float: right;
+  color: #000;
+  font-family: arial;
+  margin: 3px;
+}
+
+.events {
+  margin: 10px auto;
+}
+
+.event {
+  display: inline-block;
+  border-radius: 20px;
+  background: #00f;
+  height: 20px;
+  width: 20px;
+  margin: 3px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px 0px #000;
+}
+
+#previous {
+  display: inline;
+  float: left;
+  cursor: pointer;
+}
+
+#next {
+  display: inline;
+  float: right;
+  cursor: pointer;
+}

@@ -1,0 +1,20 @@
+MONTHS
+DAYS
+  4 When I click on a day, I want a dialog popup to appear with the details of each event (jQueryui dialog/modal)
+  DIALOG
+    5 (style) I want to create a new event (via a button)
+    11 (style) I want to sort events based on priority (jQueryui sortable)
+EVENTS
+  6 (logic) I want to create a new event (See DIALOG)
+  7 When I hover over an event, I want a tooltip to tell me what event it is
+  TOOLTIP
+    8 I want to edit the current event (via a button)
+  9 I want to drag and drop events from one day to another (jQueryui draggable droppable)
+  10 I want to mark an event as done (via a button on the tooltip as well as the dialog)
+  12 (logic) I want to sort events based on priority (See DIALOG)
+
+DONE
+  1 I want to see all the days in a month (as well as the title)
+  2 I want each day to have a number
+  3 I want to switch from one month to another
+    - The month and days and day numbers should change accordingly
