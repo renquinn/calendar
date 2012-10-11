@@ -1,17 +1,18 @@
 MONTHS
 DAYS
   DIALOG
-    11 (style) I want to sort events based on priority (jQueryui sortable)
+    12 (style) I want to sort events based on priority (jQueryui sortable)
 EVENTS
-  6 I want to create a new event (See DIALOG)
+  6 I want to create a new event
 	6.5 I want to see events by day
   7 When I hover over an event, I want a tooltip to tell me what event it is
+  8 I want to determine my event's color (drop down color picker)
   TOOLTIP
-    8 I want to edit the current event (via a button)
-  9 I want to drag and drop events from one day to another (jQueryui draggable droppable)
-  10 I want to mark an event as done (via a button on the tooltip as well as the dialog)
-  12 (logic) I want to sort events based on priority (See DIALOG)
-  13 I want to log in as a user
+    9 I want to edit the current event
+  10 I want to drag and drop events from one day to another (jQueryui draggable droppable)
+  11 I want to mark an event as done (via a button on the tooltip as well as the dialog)
+  13 (logic) I want to sort events based on priority (See DIALOG)
+  14 I want to log in as a user
 
 DONE
   1 I want to see all the days in a month (as well as the title)
