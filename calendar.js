@@ -111,7 +111,8 @@ $(function() {
     minHeight: 300,
     modal: true,
     position: 'center',
-    show: 'highlight'
+    hide: {effect: 'fade', duration: 500},
+    show: {effect: 'fade', duration: 750},
   });
 
   $('.day').live('click', function() {
