@@ -1,6 +1,6 @@
 MONTHS
 DAYS
-  4 When I click on a day, I want a dialog popup to appear with the details of each event (jQueryui dialog/modal)
+  4.5 I want to see the current month when I click the Today button
   DIALOG
     5 (style) I want to create a new event (via a button)
     11 (style) I want to sort events based on priority (jQueryui sortable)
@@ -20,3 +20,4 @@ DONE
   2 I want each day to have a number
   3 I want to switch from one month to another
     - The month and days and day numbers should change accordingly
+  4 When I click on a day, I want a dialog popup to appear with the details of each event (jQueryui dialog/modal)

@@ -81,3 +81,30 @@ h1 {
   float: right;
   cursor: pointer;
 }
+
+.ui-dialog {
+  position: fixed;
+  top: 200px ! important;
+  background: #ccc;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.ui-dialog-titlebar{
+  background: #aaa;
+  border-radius: 5px;
+  padding: 7px;
+}
+
+.ui-dialog-titlebar-close {
+  float: right;
+  text-decoration: none;
+  color: #000;
+  font-family: helvetica;
+}
+
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  background: rgba(50, 50, 50, 0.8);
+}

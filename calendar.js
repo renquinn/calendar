@@ -1,4 +1,6 @@
 $(function() {
+  var months = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+  var days = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
   // Init
 
   // Typical Day
@@ -49,14 +51,13 @@ $(function() {
     date.setDate(1);
     var month = date.getMonth();
     var year = date.getFullYear();
-    var months = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
 
     $('#month').find('h1').text(months[month] + ' ' + year).data('month',month).data('year',year);
     var cal = $('#month').find('table').empty();
 
     var i = 0;
     var number = 1;
-    var first = date.getDay();
+    var theFirst = date.getDay();
     var next_month_day = 1;
 
     var newyear = year;
@@ -73,10 +74,10 @@ $(function() {
     while (i < 42) {
       var row = $('<tr />');
       for (var j=0; j < 7; j++) {
-        if (i < first) {
-          row.append('<td><div class="day notmyday"><div class="number">' + ((last_month_days - first) + i) + '</div></div></td>');
+        if (i < theFirst) {
+          row.append('<td><div class="day notmyday previous"><div class="number">' + ((last_month_days - theFirst) + (i+1)) + '</div></div></td>');
         } else if (number > this_month_days) {
-          row.append('<td><div class="day notmyday"><div class="number">' + next_month_day + '</div></div></td>');
+          row.append('<td><div class="day notmyday next"><div class="number">' + next_month_day + '</div></div></td>');
           next_month_day++;
         } else {
           if (number == today.getDate() && month == today.getMonth() && year == today.getFullYear()) {
@@ -103,6 +104,40 @@ $(function() {
 
     putMonth(date);
   };
+
+  $('#dialog').dialog({
+    autoOpen: false,
+    closeText: 'x',
+    minHeight: 300,
+    modal: true,
+    position: 'center',
+    show: 'highlight'
+  });
+
+  $('.day').live('click', function() {
+    var $dialog = $('#dialog');
+
+    var num = $(this).find('.number').text();
+    var newmonth = $('#month').find('h1').data('month');
+    var newyear = $('#month').find('h1').data('year');
+    var date = new Date();
+    if ($(this).hasClass('notmyday')) {
+      if ($(this).hasClass('next')) {
+        newmonth++;
+      } else {
+        newmonth--;
+      }
+    }
+    date.setMonth(newmonth);
+    date.setYear(newyear);
+    date.setDate(num);
+    var day = date.getDay();
+    var title = days[day] + ' ' + months[date.getMonth()] + ' ' + num + ', ' + newyear;
+
+    $dialog.dialog('option', 'title', title);
+
+    $dialog.dialog('open');
+  });
 
   init();
 
