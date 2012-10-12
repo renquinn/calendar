@@ -53,11 +53,11 @@ h1 {
   margin: 3px;
 }
 
-.events {
+.day-events {
   margin: 10px auto;
 }
 
-.event {
+.day-event {
   display: inline-block;
   border-radius: 20px;
   background: #00f;
@@ -111,8 +111,22 @@ h1 {
 
 #dialog-events {
   min-height: 100px;
+  margin: 15px 0;
 }
 
+.dialog-event {
+  width: 95%;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background: rgba(75, 100, 200, 0.7);
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.dialog-event:hover {
+  background: rgba(75, 100, 200, 0.4);
+}
 #add-event {
   float: right;
 }

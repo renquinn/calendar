@@ -157,6 +157,8 @@ $(function() {
 
     $dialog.data('key', key);
 
+    loadEvents(key);
+
     $dialog.dialog('option', 'title', title);
 
     $dialog.dialog('open');
@@ -186,9 +188,19 @@ $(function() {
     } else {
       db[key].push(task);
     }
+    loadEvents(key);
     $('#add-event-dialog').parent().find('.ui-dialog-titlebar-close').click();
     console.log(db);
   });
+
+  var loadEvents = function(key) {
+    $('#dialog-events').empty();
+    if (db[key] != undefined) {
+      $.each(db[key], function(key, value) {
+        $('<div />').addClass('dialog-event').text(value).appendTo('#dialog-events');
+      });
+    }
+  };
 
   init();
 
