@@ -3,10 +3,15 @@
     <link rel="stylesheet" type="text/css" href="calendar.css" />
   </head>
   <body>
-    <div id="dialog" title="">
+    <div id="dialog">
       <div id="dialog-events">
       </div>
       <button type="button" id="add-event">+ New Event</button>
+    </div>
+    <div id="add-event-dialog">
+      <br /><span>Enter task text:</span><br />
+      <textarea cols="30" type="text" id="event-text"></textarea>
+      <button type="button" id="save-event">Save</button>
     </div>
     <div id="month">
       <h1></h1>

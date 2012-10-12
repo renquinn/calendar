@@ -123,6 +123,17 @@ $(function() {
     show: {effect: 'fade', duration: 750},
   });
 
+  $('#add-event-dialog').dialog({
+    autoOpen: false,
+    closeText: 'x',
+    minHeight: 100,
+    modal: true,
+    position: 'center',
+    hide: {effect: 'fade', duration: 500},
+    show: {effect: 'fade', duration: 750},
+    title: 'Add event',
+  });
+
   $('.day').live('click', function() {
     var $dialog = $('#dialog');
 
@@ -157,6 +168,11 @@ $(function() {
     $('.day').css('border-radius', (width)*(.01));
   });
     */
+
+  $('#add-event').click(function() {
+    var $dialog = $('#add-event-dialog');
+    $dialog.dialog('open');
+  });
 
   init();
 

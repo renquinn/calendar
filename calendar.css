@@ -99,7 +99,7 @@ h1 {
 .ui-dialog-titlebar-close {
   float: right;
   text-decoration: none;
-  color: #000;
+  color: #777;
   font-family: helvetica;
 }
 
@@ -115,6 +115,14 @@ h1 {
 
 #add-event {
   float: right;
+}
+
+#add-event-dialog span {
+  margin: 10px;
+}
+
+#event-text {
+  margin: 25px;
 }
 
 @media (max-width: 1400px) {
