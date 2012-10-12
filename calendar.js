@@ -152,7 +152,10 @@ $(function() {
     date.setYear(newyear);
     date.setDate(num);
     var day = date.getDay();
-    var title = days[day] + ' ' + months[date.getMonth()] + ' ' + num + ', ' + newyear;
+    var title = days[day] + ' ' + months[newmonth] + ' ' + num + ', ' + newyear;
+    var key = '' + newyear + months[newmonth] + num;
+
+    $dialog.data('key', key);
 
     $dialog.dialog('option', 'title', title);
 
@@ -172,6 +175,19 @@ $(function() {
   $('#add-event').click(function() {
     var $dialog = $('#add-event-dialog');
     $dialog.dialog('open');
+  });
+
+  $('#save-event').click(function() {
+    var task = $('#event-text').val();
+    $('#event-text').val('');
+    var key = $('#dialog').data('key');
+    if (db[key] == undefined) {
+      db[key] = [task];
+    } else {
+      db[key].push(task);
+    }
+    $('#add-event-dialog').parent().find('.ui-dialog-titlebar-close').click();
+    console.log(db);
   });
 
   init();
