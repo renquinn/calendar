@@ -1,7 +1,7 @@
 $(function() {
   var months = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
   var days = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
-  // Init
+  var db = {};
 
   // Typical Day
   // <td><div class="day"></div></td>
@@ -14,6 +14,9 @@ $(function() {
   //
   // Day with event
   // <td><div class="day"><div class="number">1</div><div class="event"></div></div></td>
+  //
+  // Object Keys
+  // db.year.month.day
 
   $('#previous').click(function() {
     var newmonth = $('#month').find('h1').data('month') - 1;
@@ -43,7 +46,8 @@ $(function() {
   });
 
   $('#go-today').click(function() {
-    init();
+    date = new Date();
+    putMonth(date);
   });
 
   var daysInMonth = function(month, year) {
@@ -104,8 +108,8 @@ $(function() {
   };
 
   var init = function() {
+    // Set Date
     date = new Date();
-
     putMonth(date);
   };
 
