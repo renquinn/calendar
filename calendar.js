@@ -67,6 +67,10 @@ $(function() {
     var number = 1;
     var theFirst = date.getDay();
     var next_month_day = 1;
+    var next_month_year = year;
+    if (month == 11) {
+      next_month_year++;
+    }
 
     var newyear = year;
     var newmonth = month;
@@ -82,8 +86,19 @@ $(function() {
     while (i < 42) {
       var row = $('<tr />');
       for (var j=0; j < 7; j++) {
+        var key = '';
         if (i < theFirst) {
-          row.append('<td><div class="day notmyday previous"><div class="number">' + ((last_month_days - theFirst) + (i+1)) + '</div></div></td>');
+          var last_month_day = ((last_month_days - theFirst) + (i+1));
+          key = newyear + months[newmonth] + last_month_day;
+          var cell = $('<td />');
+          var html_day = $('<div />').addClass('day notmyday previous').append($('<div />').addClass('number').text(last_month_day));
+          if (db[key]) {
+            $.each(db[key], function(key, val) {
+              $('<div />').addClass('event').data(val);
+            });
+          }
+          row.append(cell.append(html_day));
+          //row.append('<td><div class="day notmyday previous"><div class="number">' + last_month_day + '</div></div></td>');
         } else if (number > this_month_days) {
           row.append('<td><div class="day notmyday next"><div class="number">' + next_month_day + '</div></div></td>');
           next_month_day++;
@@ -190,7 +205,6 @@ $(function() {
     }
     loadEvents(key);
     $('#add-event-dialog').parent().find('.ui-dialog-titlebar-close').click();
-    console.log(db);
   });
 
   var loadEvents = function(key) {
